@@ -15,6 +15,10 @@ public interface RunningInformationService {
     public Page<RunningInformation> findByHeartRateGreaterThan(int heartRate, Pageable pageable);
 
     public Page<RunningInformation> findAllRunningInformationOrderByHeathLevel(Pageable pageable);
+    
+    public Page<RunningInformation> findByRunnerMovementType(String movementType, Pageable pageable);
+
+    public Page<RunningInformation> findByRunningId(String runningId, Pageable pageable);
 
     public void deleteAll();
 }
