@@ -40,6 +40,16 @@ public class RunningInformationServiceImpl implements RunningInformationService 
     public Page<RunningInformation> findByHeartRateGreaterThan(int heartRate, Pageable pageable) {
         return runningInformationRepository.findByHeartRateGreaterThan(heartRate, pageable);
     }
+    
+    @Override
+    public Page<RunningInformation> findByRunnerMovementType(String movementType, Pageable pageable) {
+        return runningInformationRepository.findByRunnerMovementType(RunningInformation.RunnerMovementType.valueOf(movementType), pageable);
+    }
+
+    @Override
+    public Page<RunningInformation> findByRunningId(String runningId, Pageable pageable) {
+        return runningInformationRepository.findByUnitInfoRunningId(runningId, pageable);
+    }
 
     @Override
     public Page<RunningInformation> findAllRunningInformationOrderByHeathLevel(Pageable pageable) {
